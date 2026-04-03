@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIM – AI Integrated Management | KOICA Nigeria Smart School</title>
+    <link rel="stylesheet" href="aim-style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-badge">AIM</div>
+    <div class="logo-sub"><strong>AI Integrated Management</strong>KOICA Nigeria Smart School Project</div>
+  </div>
+  <nav>
+    <button onclick="document.getElementById('legend').scrollIntoView({behavior:'smooth'})">문서 유형</button>
+    <button onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">워크플로우</button>
+    <a href="dashboard_v2.html"><button>📊 대시보드</button></a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-tag">✦ 문서 성격별 산출물 분류 · UBION AIM</div>
+  <h1>산출물 97건을 <span>5가지 문서 성격</span>으로</h1>
+  <p>KOICA 나이지리아 스마트 스쿨 프로젝트의 모든 산출물을 문서 성격에 따라 분류하고,<br>각 유형에 맞는 출력 포맷과 AI 도구를 자동 연결합니다.</p>
+
+  <div class="cat-cards">
+    <div class="cat-card" style="--card-color:#4f8ef7" onclick="openPanel(0)">
+      <span class="card-icon">📋</span>
+      <div class="card-info">
+        <div class="card-name">기획·계획 문서</div>
+        <div class="card-meta">25건 · ✅11 📅6 ❓8</div>
+        <div class="card-fmts">
+          <span class="fmt-badge f-hwp">HWP</span>
+          <span class="fmt-badge f-docx">DOCX</span>
+          <span class="fmt-badge f-xlsx">XLSX</span>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" style="--card-color:#e3b341" onclick="openPanel(1)">
+      <span class="card-icon">📚</span>
+      <div class="card-info">
+        <div class="card-name">교육·운영 자료</div>
+        <div class="card-meta">15건 · ✅12 📅3</div>
+        <div class="card-fmts">
+          <span class="fmt-badge f-docx">DOCX</span>
+          <span class="fmt-badge f-pdf">PDF</span>
+          <span class="fmt-badge f-pptx">PPTX</span>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" style="--card-color:#f778ba" onclick="openPanel(2)">
+      <span class="card-icon">📝</span>
+      <div class="card-info">
+        <div class="card-name">측정·조사 도구</div>
+        <div class="card-meta">6건 · ✅4 📅1 🔄1</div>
+        <div class="card-fmts">
+          <span class="fmt-badge f-hwp">HWP</span>
+          <span class="fmt-badge f-docx">DOCX</span>
+          <span class="fmt-badge f-etc">Forms</span>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" style="--card-color:#3fb950" onclick="openPanel(3)">
+      <span class="card-icon">📄</span>
+      <div class="card-info">
+        <div class="card-name">결과·사업 보고서</div>
+        <div class="card-meta">45건 · ✅18 📅11 ❓16</div>
+        <div class="card-fmts">
+          <span class="fmt-badge f-hwp">HWP</span>
+          <span class="fmt-badge f-docx">DOCX</span>
+          <span class="fmt-badge f-pdf">PDF</span>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" style="--card-color:#39d0c8" onclick="openPanel(4)">
+      <span class="card-icon">🎨</span>
+      <div class="card-info">
+        <div class="card-name">홍보·성과공유</div>
+        <div class="card-meta">6건 · 📅6</div>
+        <div class="card-fmts">
+          <span class="fmt-badge f-pptx">PPTX</span>
+          <span class="fmt-badge f-pdf">PDF</span>
+          <span class="fmt-badge f-etc">영상</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main -->
+<div class="main-wrap">
+
+  <!-- Hub -->
+  <div class="hub-side">
+    <div class="hub-wrap">
+      <svg class="hub-svg" viewBox="0 0 320 320">
+        <defs>
+          <linearGradient id="g0" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#4f8ef7" stop-opacity=".7"/><stop offset="100%" stop-color="#4f8ef7" stop-opacity=".1"/></linearGradient>
+          <linearGradient id="g1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e3b341" stop-opacity=".7"/><stop offset="100%" stop-color="#e3b341" stop-opacity=".1"/></linearGradient>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f778ba" stop-opacity=".7"/><stop offset="100%" stop-color="#f778ba" stop-opacity=".1"/></linearGradient>
+          <linearGradient id="g3" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3fb950" stop-opacity=".7"/><stop offset="100%" stop-color="#3fb950" stop-opacity=".1"/></linearGradient>
+          <linearGradient id="g4" x1="100%" y1="0%" x2="0%" y2="0%"><stop offset="0%" stop-color="#39d0c8" stop-opacity=".7"/><stop offset="100%" stop-color="#39d0c8" stop-opacity=".1"/></linearGradient>
+          <linearGradient id="g5" x1="100%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#7c5cfc" stop-opacity=".7"/><stop offset="100%" stop-color="#7c5cfc" stop-opacity=".1"/></linearGradient>
+        </defs>
+        <line x1="160" y1="108" x2="160" y2="55"  stroke="url(#g0)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <line x1="201" y1="135" x2="248" y2="108" stroke="url(#g1)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <line x1="201" y1="185" x2="248" y2="212" stroke="url(#g2)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <line x1="160" y1="212" x2="160" y2="265" stroke="url(#g3)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <line x1="119" y1="185" x2="72"  y2="212" stroke="url(#g4)" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <line x1="119" y1="135" x2="72"  y2="108" stroke="url(#g5)" stroke-width="1.5" stroke-dasharray="5 3"/>
+      </svg>
+      <div class="hub-center">
+        <div class="aim-text">AIM</div>
+        <div class="aim-sub">AI INTEGRATED<br>MANAGEMENT</div>
+      </div>
+      <div class="hub-node n0" style="--node-color:#4f8ef7" onclick="openPanel(0)">
+        <span class="node-icon">📋</span>
+        <div class="node-title">기획·계획<br>문서</div>
+        <div class="node-cnt">25건</div>
+        <div class="node-fmt">HWP·DOCX·XLSX</div>
+      </div>
+      <div class="hub-node n1" style="--node-color:#e3b341" onclick="openPanel(1)">
+        <span class="node-icon">📚</span>
+        <div class="node-title">교육·운영<br>자료</div>
+        <div class="node-cnt">15건</div>
+        <div class="node-fmt">DOCX·PDF·PPTX</div>
+      </div>
+      <div class="hub-node n2" style="--node-color:#f778ba" onclick="openPanel(2)">
+        <span class="node-icon">📝</span>
+        <div class="node-title">측정·조사<br>도구</div>
+        <div class="node-cnt">6건</div>
+        <div class="node-fmt">HWP·DOCX·Forms</div>
+      </div>
+      <div class="hub-node n3" style="--node-color:#3fb950" onclick="openPanel(3)">
+        <span class="node-icon">📄</span>
+        <div class="node-title">결과·사업<br>보고서</div>
+        <div class="node-cnt">45건</div>
+        <div class="node-fmt">HWP·DOCX·PDF</div>
+      </div>
+      <div class="hub-node n4" style="--node-color:#39d0c8" onclick="openPanel(4)">
+        <span class="node-icon">🎨</span>
+        <div class="node-title">홍보·성과<br>공유</div>
+        <div class="node-cnt">6건</div>
+        <div class="node-fmt">PPTX·PDF·영상</div>
+      </div>
+      <div class="hub-node n5" style="--node-color:#7c5cfc" onclick="openPanel(5)">
+        <span class="node-icon">🔗</span>
+        <div class="node-title">UBION<br>Platform</div>
+        <div class="node-cnt">연동</div>
+        <div class="node-fmt">All Formats</div>
+      </div>
+    </div>
+
+    <div class="hub-stats">
+      <div class="hstat-row"><div class="hstat-label"><span class="hstat-dot" style="background:var(--green)"></span>Finished</div><div class="hstat-val" style="color:var(--green)">45건</div></div>
+      <div class="hstat-row"><div class="hstat-label"><span class="hstat-dot" style="background:var(--orange)"></span>Planned</div><div class="hstat-val" style="color:var(--orange)">27건</div></div>
+      <div class="hstat-row"><div class="hstat-label"><span class="hstat-dot" style="background:var(--teal)"></span>Going on</div><div class="hstat-val" style="color:var(--teal)">1건</div></div>
+      <div class="hstat-row"><div class="hstat-label"><span class="hstat-dot" style="background:var(--muted)"></span>미확인</div><div class="hstat-val" style="color:var(--muted)">24건</div></div>
+      <div class="hstat-row"><div class="hstat-label"><strong>총 문서형 산출물</strong></div><div class="hstat-val">97건</div></div>
+    </div>
+  </div>
+
+  <!-- Detail -->
+  <div class="detail-side" id="detailSide">
+    <div class="detail-placeholder" id="placeholder">
+      <div class="ph-big">👈</div>
+      <p style="font-size:.88rem;line-height:1.7;">왼쪽 허브 또는 위 카드에서<br>문서 유형을 선택하면 산출물 목록이 표시됩니다.</p>
+    </div>
+
+    <!-- 0: 기획·계획 -->
+    <div class="detail-panel" id="dp0">
+      <div class="panel-hdr clr" style="--pc:#4f8ef7">
+        <div class="phdr-top">
+          <div class="phdr-icon">📋</div>
+          <div><div class="phdr-title">기획·계획 문서</div><div class="phdr-desc">사업 활동 전 단계에서 작성하는 계획서·일정표·입찰 서류. 사업의 방향과 일정을 구체화하는 문서.</div></div>
+        </div>
+        <div class="phdr-row">
+          <div class="sbadge"><span class="dot" style="background:var(--green)"></span>Finished 11</div>
+          <div class="sbadge"><span class="dot" style="background:var(--orange)"></span>Planned 6</div>
+          <div class="sbadge"><span class="dot" style="background:var(--muted)"></span>미확인 8</div>
+          <span class="ai-badge ai-works">🤖 AI Works</span>
+        </div>
+      </div>
+      <div class="fbar clr" style="--pc:#4f8ef7">
+        <span class="flabel">상태:</span>
+        <button class="fbtn fa active" onclick="ft(0,'all',this)">전체 25</button>
+        <button class="fbtn fd" onclick="ft(0,'Finished',this)">✅ 완료 11</button>
+        <button class="fbtn fp" onclick="ft(0,'Planned',this)">📅 예정 6</button>
+        <button class="fbtn fn" onclick="ft(0,'',this)">❓ 미확인 8</button>
+      </div>
+      <div class="fmt-bar clr" style="--pc:#4f8ef7">
+        <span class="flabel">출력 포맷:</span>
+        <span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-xlsx">XLSX</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:6px;">AI Works → 사업 목표·활동 데이터 기반 계획서 초안 자동 생성</span>
+        <button class="fbtn" style="margin-left:auto;background:rgba(79,142,247,.15);border-color:#4f8ef7;color:#4f8ef7;" onclick="dlExcel(0)">📥 Excel</button>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#4f8ef7"><div class="scroll-box"><table class="out"><thead><tr><th>산출물명</th><th>구성단위</th><th>담당자</th><th>상태</th><th>AI 생성</th></tr></thead><tbody id="tb0"></tbody></table></div></div>
+    </div>
+
+    <!-- 1: 교육·운영 -->
+    <div class="detail-panel" id="dp1">
+      <div class="panel-hdr clr" style="--pc:#e3b341">
+        <div class="phdr-top">
+          <div class="phdr-icon">📚</div>
+          <div><div class="phdr-title">교육·운영 자료</div><div class="phdr-desc">교원 연수·워크숍 운영에 활용되는 교재, 가이드, 매뉴얼, 이수증, 승인문서. 현장에서 직접 사용되는 실행 자료.</div></div>
+        </div>
+        <div class="phdr-row">
+          <div class="sbadge"><span class="dot" style="background:var(--green)"></span>Finished 12</div>
+          <div class="sbadge"><span class="dot" style="background:var(--orange)"></span>Planned 3</div>
+          <span class="ai-badge ai-pixel">🎨 PixelDeck</span>
+          <span class="ai-badge ai-works">🤖 AI Works</span>
+        </div>
+      </div>
+      <div class="fbar clr" style="--pc:#e3b341">
+        <span class="flabel">상태:</span>
+        <button class="fbtn fa active" onclick="ft(1,'all',this)">전체 15</button>
+        <button class="fbtn fd" onclick="ft(1,'Finished',this)">✅ 완료 12</button>
+        <button class="fbtn fp" onclick="ft(1,'Planned',this)">📅 예정 3</button>
+      </div>
+      <div class="fmt-bar clr" style="--pc:#e3b341">
+        <span class="flabel">출력 포맷:</span>
+        <span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-pdf">PDF</span><span class="fmt-badge f-pptx">PPTX</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:6px;">PixelDeck → 교재·가이드 레이아웃 자동 디자인 · AI Works → 내용 초안</span>
+        <button class="fbtn" style="margin-left:auto;background:rgba(227,179,65,.15);border-color:#e3b341;color:#e3b341;" onclick="dlExcel(1)">📥 Excel</button>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#e3b341"><div class="scroll-box"><table class="out"><thead><tr><th>산출물명</th><th>구성단위</th><th>담당자</th><th>상태</th><th>AI 생성</th></tr></thead><tbody id="tb1"></tbody></table></div></div>
+    </div>
+
+    <!-- 2: 측정·조사 -->
+    <div class="detail-panel" id="dp2">
+      <div class="panel-hdr clr" style="--pc:#f778ba">
+        <div class="phdr-top">
+          <div class="phdr-icon">📝</div>
+          <div><div class="phdr-title">측정·조사 도구</div><div class="phdr-desc">교원 역량 진단, 만족도 설문, 현황 분석 등 데이터 수집과 평가를 위한 도구형 문서.</div></div>
+        </div>
+        <div class="phdr-row">
+          <div class="sbadge"><span class="dot" style="background:var(--green)"></span>Finished 4</div>
+          <div class="sbadge"><span class="dot" style="background:var(--orange)"></span>Planned 1</div>
+          <div class="sbadge"><span class="dot" style="background:var(--teal)"></span>Going on 1</div>
+          <span class="ai-badge ai-works">🤖 AI Works</span>
+        </div>
+      </div>
+      <div class="fbar clr" style="--pc:#f778ba">
+        <span class="flabel">상태:</span>
+        <button class="fbtn fa active" onclick="ft(2,'all',this)">전체 6</button>
+        <button class="fbtn fd" onclick="ft(2,'Finished',this)">✅ 완료 4</button>
+        <button class="fbtn fp" onclick="ft(2,'Planned',this)">📅 예정 1</button>
+        <button class="fbtn fg" onclick="ft(2,'Going on',this)">🔄 진행 1</button>
+      </div>
+      <div class="fmt-bar clr" style="--pc:#f778ba">
+        <span class="flabel">출력 포맷:</span>
+        <span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-etc">Google Forms 연동</span><span class="fmt-badge f-xlsx">XLSX (통계 연계)</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:6px;">AI Works → PDM 기반 설문 문항 자동 설계 · 통계 분석 연계</span>
+        <button class="fbtn" style="margin-left:auto;background:rgba(247,120,186,.15);border-color:#f778ba;color:#f778ba;" onclick="dlExcel(2)">📥 Excel</button>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#f778ba"><div class="scroll-box"><table class="out"><thead><tr><th>산출물명</th><th>구성단위</th><th>담당자</th><th>상태</th><th>AI 생성</th></tr></thead><tbody id="tb2"></tbody></table></div></div>
+    </div>
+
+    <!-- 3: 결과·사업 보고서 -->
+    <div class="detail-panel" id="dp3">
+      <div class="panel-hdr clr" style="--pc:#3fb950">
+        <div class="phdr-top">
+          <div class="phdr-icon">📄</div>
+          <div><div class="phdr-title">결과·사업 보고서</div><div class="phdr-desc">활동 실행 후 작성하는 결과보고서, 반기보고서, 출장보고서, PAO 활동보고서 등 사후 보고 문서.</div></div>
+        </div>
+        <div class="phdr-row">
+          <div class="sbadge"><span class="dot" style="background:var(--green)"></span>완료 18</div>
+          <div class="sbadge"><span class="dot" style="background:var(--orange)"></span>예정 11</div>
+          <div class="sbadge"><span class="dot" style="background:var(--muted)"></span>미확인 16</div>
+          <span class="ai-badge ai-works">🤖 AI Works</span>
+        </div>
+      </div>
+      <div class="fbar clr" style="--pc:#3fb950">
+        <span class="flabel">상태:</span>
+        <button class="fbtn fa active" onclick="ft(3,'all',this)">전체 45</button>
+        <button class="fbtn fd" onclick="ft(3,'Finished',this)">✅ 완료 18</button>
+        <button class="fbtn fp" onclick="ft(3,'Planned',this)">📅 예정 11</button>
+        <button class="fbtn fn" onclick="ft(3,'',this)">❓ 미확인 16</button>
+      </div>
+      <div class="sub-bar clr" style="--pc:#3fb950">
+        <span class="flabel">보고서 유형:</span>
+        <button class="sbtn active" onclick="subFilter(3,'all',this)">전체</button>
+        <button class="sbtn" onclick="subFilter(3,'결과보고서',this)">활동 결과보고서</button>
+        <button class="sbtn" onclick="subFilter(3,'반기',this)">반기 보고서</button>
+        <button class="sbtn" onclick="subFilter(3,'출장',this)">출장 보고서</button>
+        <button class="sbtn" onclick="subFilter(3,'PAO',this)">PAO 보고서</button>
+        <button class="sbtn" onclick="subFilter(3,'기타',this)">기타</button>
+      </div>
+      <div class="fmt-bar clr" style="--pc:#3fb950">
+        <span class="flabel">출력 포맷:</span>
+        <span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-pdf">PDF</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:6px;">AI Works → 활동 일지·통계·사진 기반 보고서 본문 자동 초안</span>
+        <button class="fbtn" style="margin-left:auto;background:rgba(63,185,80,.15);border-color:#3fb950;color:#3fb950;" onclick="dlExcel(3)">📥 Excel</button>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#3fb950"><div class="scroll-box"><table class="out"><thead><tr><th>산출물명</th><th>유형</th><th>담당자</th><th>상태</th><th>AI 생성</th></tr></thead><tbody id="tb3"></tbody></table></div></div>
+    </div>
+
+    <!-- 4: 홍보·성과공유 -->
+    <div class="detail-panel" id="dp4">
+      <div class="panel-hdr clr" style="--pc:#39d0c8">
+        <div class="phdr-top">
+          <div class="phdr-icon">🎨</div>
+          <div><div class="phdr-title">홍보·성과공유 자료</div><div class="phdr-desc">수업 사례집, 성과공유 세미나 자료, 홍보 영상·브로셔 등 외부 공유·홍보 목적의 산출물.</div></div>
+        </div>
+        <div class="phdr-row">
+          <div class="sbadge"><span class="dot" style="background:var(--orange)"></span>Planned 6</div>
+          <span class="ai-badge ai-pixel">🎨 PixelDeck</span>
+        </div>
+      </div>
+      <div class="fbar clr" style="--pc:#39d0c8">
+        <span class="flabel">상태:</span>
+        <button class="fbtn fa active" onclick="ft(4,'all',this)">전체 6</button>
+        <button class="fbtn fp" onclick="ft(4,'Planned',this)">📅 예정 6</button>
+      </div>
+      <div class="fmt-bar clr" style="--pc:#39d0c8">
+        <span class="flabel">출력 포맷:</span>
+        <span class="fmt-badge f-pptx">PPTX</span><span class="fmt-badge f-pdf">PDF</span><span class="fmt-badge f-etc">영상 MP4</span><span class="fmt-badge f-etc">브로셔 PDF</span>
+        <span style="font-size:.7rem;color:var(--muted);margin-left:6px;">PixelDeck → KOICA 브랜드 가이드 적용 슬라이드·홍보물 자동 디자인</span>
+        <button class="fbtn" style="margin-left:auto;background:rgba(57,208,200,.15);border-color:#39d0c8;color:#39d0c8;" onclick="dlExcel(4)">📥 Excel</button>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#39d0c8"><div class="scroll-box"><table class="out"><thead><tr><th>산출물명</th><th>구성단위</th><th>담당자</th><th>상태</th><th>AI 생성</th></tr></thead><tbody id="tb4"></tbody></table></div></div>
+    </div>
+
+    <!-- 5: UBION Platform -->
+    <div class="detail-panel" id="dp5">
+      <div class="panel-hdr clr" style="--pc:#7c5cfc">
+        <div class="phdr-top">
+          <div class="phdr-icon">🔗</div>
+          <div><div class="phdr-title">UBION AI Platform 연동</div><div class="phdr-desc">PixelDeck + AI Works — 문서 유형별 출력 포맷을 자동 판단하고 최적 AI 도구를 연결합니다.</div></div>
+        </div>
+        <div class="phdr-row">
+          <span class="ai-badge ai-pixel">🎨 PixelDeck</span>
+          <span class="ai-badge ai-works">🤖 AI Works</span>
+          <div class="sbadge">97건 전체 연동</div>
+        </div>
+      </div>
+      <div class="tbl-wrap clr" style="--pc:#7c5cfc; border-top:1px solid rgba(124,92,252,.3);">
+        <div style="padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;">PixelDeck 담당</div>
+            <div style="font-size:1.3rem;font-weight:800;color:var(--teal);margin-bottom:4px;">21건</div>
+            <div style="font-size:.78rem;color:var(--muted);line-height:1.6;">교육·운영 자료(15) + 홍보·성과공유(6)<br>→ PPTX·PDF·영상·브로셔 자동 생성</div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;">AI Works 담당</div>
+            <div style="font-size:1.3rem;font-weight:800;color:#9d7ffc;margin-bottom:4px;">76건</div>
+            <div style="font-size:.78rem;color:var(--muted);line-height:1.6;">기획(25) + 측정(6) + 보고서(45)<br>→ HWP·DOCX·XLSX·PDF 자동 초안</div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;">출력 포맷 자동 판단</div>
+            <div style="font-size:.8rem;color:var(--text);line-height:1.7;">문서 성격 → AI 도구 자동 매핑<br>계획·보고 → <strong>HWP/DOCX</strong><br>설문·분석 → <strong>DOCX + XLSX 연계</strong><br>발표·홍보 → <strong>PPTX/PDF</strong></div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;">기대 효과</div>
+            <div style="font-size:.8rem;color:var(--text);line-height:1.7;">✓ 문서 작성 70% 시간 단축<br>✓ KOICA 표준 양식 자동 적용<br>✓ 한국어·영어 동시 출력<br>✓ 산출물 상태 실시간 업데이트</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Document type legend -->
+<section class="section-wrap" id="legend">
+  <div class="sec-title">문서 성격별 유형 정의</div>
+  <div class="legend-grid">
+    <div class="legend-card" style="--lc:#4f8ef7">
+      <span class="lg-icon">📋</span>
+      <h4>기획·계획 문서</h4>
+      <p>활동 실행 전 작성하는 방향 설정 문서. 사업 목표와 실행 방법을 구체화.</p>
+      <div class="legend-fmts"><span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-xlsx">XLSX</span></div>
+    </div>
+    <div class="legend-card" style="--lc:#e3b341">
+      <span class="lg-icon">📚</span>
+      <h4>교육·운영 자료</h4>
+      <p>교원 연수·워크숍 현장에서 직접 사용하는 교재, 가이드, 매뉴얼, 이수증.</p>
+      <div class="legend-fmts"><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-pdf">PDF</span><span class="fmt-badge f-pptx">PPTX</span></div>
+    </div>
+    <div class="legend-card" style="--lc:#f778ba">
+      <span class="lg-icon">📝</span>
+      <h4>측정·조사 도구</h4>
+      <p>데이터 수집과 역량 측정을 위한 설문지, 진단 도구, 만족도 조사 자료.</p>
+      <div class="legend-fmts"><span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-etc">Forms</span></div>
+    </div>
+    <div class="legend-card" style="--lc:#3fb950">
+      <span class="lg-icon">📄</span>
+      <h4>결과·사업 보고서</h4>
+      <p>활동 완료 후 제출하는 결과보고, 출장보고, 반기보고, PAO 활동보고서.</p>
+      <div class="legend-fmts"><span class="fmt-badge f-hwp">HWP</span><span class="fmt-badge f-docx">DOCX</span><span class="fmt-badge f-pdf">PDF</span></div>
+    </div>
+    <div class="legend-card" style="--lc:#39d0c8">
+      <span class="lg-icon">🎨</span>
+      <h4>홍보·성과공유</h4>
+      <p>외부 공유·홍보 목적의 사례집, 경진대회, 성과공유 세미나, 영상·브로셔.</p>
+      <div class="legend-fmts"><span class="fmt-badge f-pptx">PPTX</span><span class="fmt-badge f-pdf">PDF</span><span class="fmt-badge f-etc">영상</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section-wrap" id="process">
+  <div class="sec-title">AI 생성 워크플로우</div>
+  <div class="flow-steps">
+    <div class="flow-step"><div class="step-n" data-n="1">📥</div><div class="step-lbl"><strong>산출물 선택</strong>대시보드에서<br>항목 클릭</div></div>
+    <div class="flow-step"><div class="step-n" data-n="2">🗂️</div><div class="step-lbl"><strong>성격 자동 판단</strong>문서 유형 분류<br>→ AI 도구 매핑</div></div>
+    <div class="flow-step"><div class="step-n" data-n="3">✍️</div><div class="step-lbl"><strong>포맷 선택</strong>HWP·DOCX·PPTX<br>·XLSX 선택</div></div>
+    <div class="flow-step"><div class="step-n" data-n="4">🤖</div><div class="step-lbl"><strong>AI 초안 생성</strong>AI Works /<br>PixelDeck 실행</div></div>
+    <div class="flow-step"><div class="step-n" data-n="5">📤</div><div class="step-lbl"><strong>완료 등록</strong>산출물 상태<br>자동 업데이트</div></div>
+  </div>
+</section>
+
+<footer>
+  <p>AIM · AI Integrated Management &nbsp;|&nbsp; <span>KOICA Nigeria Smart School Project</span> &nbsp;|&nbsp; Powered by <span>UBION</span></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+<script src="aim-script.js"></script>
+</body>
+</html>
